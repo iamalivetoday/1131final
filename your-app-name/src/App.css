@@ -4,6 +4,7 @@
   grid-template-rows: repeat(4, 1fr);
   width: 100vw;
   height: 100vh;
+  background-color: white; /* light neutral background */
 }
 
 .square {
@@ -12,27 +13,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: 1px solid black; /* Thin black border outside */
+  box-sizing: border-box; /* Ensures borders don’t affect size */
 }
 
+/* Video styles */
 .video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Color classes for 12 hour-based grid squares */
-.hour-1 { background-color: #001a33; }
-.hour-2 { background-color: #001c3d; }
-.hour-3 { background-color: #002048; }
-.hour-4 { background-color: #002451; }
-.hour-6 { background-color: #002859; }
-.hour-7 { background-color: #003060; }
-.hour-8 { background-color: #3b5b7d; }
-.hour-9 { background-color: #a0b5c4; }
-.hour-11 { background-color: #ccd6e3; }
-.hour-12 { background-color: #e2eef7; }
-.hour-13 { background-color: #f0f4f9; }
-.hour-14 { background-color: #ffffff; }
-
-/* Adjust remaining squares without color */
-.hour-15, .hour-16 { background-color: #fff; }
+/* Light-like gradient classes for 12 hours */
+.hour-1 { background: linear-gradient(to bottom, #001a33, #003060); opacity: 0.8; }
+.hour-2 { background: linear-gradient(to bottom, #003060, #3b5b7d); opacity: 0.7; }
+.hour-3 { background: linear-gradient(to bottom, #3b5b7d, #a0b5c4); opacity: 0.6; }
+.hour-4 { background: linear-gradient(to bottom, #a0b5c4, #ccd6e3); opacity: 0.5; }
+.hour-6 { background: linear-gradient(to bottom, #ccd6e3, #e2eef7); opacity: 0.5; }
+.hour-7 { background: linear-gradient(to bottom, #e2eef7, #f0f4f9); opacity: 0.6; }
+.hour-8 { background: linear-gradient(to bottom, #f0f4f9, #ffffff); opacity: 0.8; }
+.hour-9 { background: linear-gradient(to bottom, #ffffff, #fcf9f3); opacity: 0.9; }
+.hour-11 { background: linear-gradient(to bottom, #fcf9f3, #f7f3ed); opacity: 0.8; }
+.hour-12 { background: linear-gradient(to bottom, #f7f3ed, #e5dfd4); opacity: 0.7; }
+.hour-13 { background: linear-gradient(to bottom, #e5dfd4, #dcd2c1); opacity: 0.6; }
+.hour-14 { background: linear-gradient(to bottom, #dcd2c1, #9b7157); opacity: 0.5; }
