@@ -15,26 +15,26 @@ function App() {
 
   return (
     <div className="App">
-      {[...Array(16)].map((_, index) => {
+      {[...Array(30)].map((_, index) => {
         if (index === 0) { // top-left diagonal position
           return (
             <div key={index} className="square">
               <video ref={videoRefs[0]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/video2.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          );
-        } else if (index === 5) { // center diagonal position
-          return (
-            <div key={index} className="square">
-              <video ref={videoRefs[1]} className="video" autoPlay loop muted>
                 <source src={`${process.env.PUBLIC_URL}/video1.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           );
-        } else if (index === 10) { // bottom-right diagonal position
+        } else if (index === 14) { // center diagonal position
+          return (
+            <div key={index} className="square">
+              <video ref={videoRefs[1]} className="video" autoPlay loop muted>
+                <source src={`${process.env.PUBLIC_URL}/video2.mp4`} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          );
+        } else if (index === 29) { // bottom-right diagonal position
           return (
             <div key={index} className="square">
               <video ref={videoRefs[2]} className="video" autoPlay loop muted>
@@ -43,15 +43,12 @@ function App() {
               </video>
             </div>
           );
-        } else if (index === 15) {
+        } else if (index < 24) { // the first 24 squares get hour colors
           return (
-            <div><p>on the Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848)
-            </p></div>
+            <div key={index} className={`square hour-${index + 1}`} />
           );
         } else {
-          return (
-            <div key={index} className={`square hour-${index}`} />
-          );
+          return <div key={index} className="square neutral" />;
         }
       })}
     </div>

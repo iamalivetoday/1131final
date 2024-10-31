@@ -1,10 +1,10 @@
 .App {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   width: 100vw;
   height: 100vh;
-  background-color: white; /* light neutral background */
+  background-color: #f8f8f8; /* light neutral background */
 }
 
 .square {
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  outline: 1px solid black; /* Thin black border outside */
-  box-sizing: border-box; /* Ensures borders don’t affect size */
+  outline: 1px solid black; /* Thin black outer border */
+  box-sizing: border-box;
 }
 
 /* Video styles */
@@ -24,16 +24,31 @@
   object-fit: cover;
 }
 
-/* Light-like gradient classes for 12 hours */
-.hour-1 { background: linear-gradient(to bottom, #001a33, #003060); opacity: 0.8; }
-.hour-2 { background: linear-gradient(to bottom, #003060, #3b5b7d); opacity: 0.7; }
-.hour-3 { background: linear-gradient(to bottom, #3b5b7d, #a0b5c4); opacity: 0.6; }
-.hour-4 { background: linear-gradient(to bottom, #a0b5c4, #ccd6e3); opacity: 0.5; }
-.hour-6 { background: linear-gradient(to bottom, #ccd6e3, #e2eef7); opacity: 0.5; }
-.hour-7 { background: linear-gradient(to bottom, #e2eef7, #f0f4f9); opacity: 0.6; }
-.hour-8 { background: linear-gradient(to bottom, #f0f4f9, #ffffff); opacity: 0.8; }
-.hour-9 { background: linear-gradient(to bottom, #ffffff, #fcf9f3); opacity: 0.9; }
-.hour-11 { background: linear-gradient(to bottom, #fcf9f3, #f7f3ed); opacity: 0.8; }
-.hour-12 { background: linear-gradient(to bottom, #f7f3ed, #e5dfd4); opacity: 0.7; }
-.hour-13 { background: linear-gradient(to bottom, #e5dfd4, #dcd2c1); opacity: 0.6; }
-.hour-14 { background: linear-gradient(to bottom, #dcd2c1, #9b7157); opacity: 0.5; }
+/* Gradient color classes for 24 hours */
+.hour-1 { background: linear-gradient(to bottom, #001a33, #003060); }
+.hour-2 { background: linear-gradient(to bottom, #003060, #003366); }
+.hour-3 { background: linear-gradient(to bottom, #003366, #003a73); }
+.hour-4 { background: linear-gradient(to bottom, #003a73, #4a77a8); }
+.hour-5 { background: linear-gradient(to bottom, #4a77a8, #7393b3); }
+.hour-6 { background: linear-gradient(to bottom, #7393b3, #a0b5c4); }
+.hour-7 { background: linear-gradient(to bottom, #a0b5c4, #ccd6e3); }
+.hour-8 { background: linear-gradient(to bottom, #ccd6e3, #e2eef7); }
+.hour-9 { background: linear-gradient(to bottom, #e2eef7, #f0f4f9); }
+.hour-10 { background: linear-gradient(to bottom, #f0f4f9, #ffffff); }
+.hour-11 { background: linear-gradient(to bottom, #ffffff, #fcf9f3); }
+.hour-12 { background: linear-gradient(to bottom, #fcf9f3, #f7f3ed); }
+.hour-13 { background: linear-gradient(to bottom, #f7f3ed, #f0e7db); }
+.hour-14 { background: linear-gradient(to bottom, #f0e7db, #e5dfd4); }
+.hour-15 { background: linear-gradient(to bottom, #e5dfd4, #dcd2c1); }
+.hour-16 { background: linear-gradient(to bottom, #dcd2c1, #c6ae8f); }
+.hour-17 { background: linear-gradient(to bottom, #c6ae8f, #9b7157); }
+.hour-18 { background: linear-gradient(to bottom, #9b7157, #5b4a50); }
+.hour-19 { background: linear-gradient(to bottom, #5b4a50, #3a3b45); }
+.hour-20 { background: linear-gradient(to bottom, #3a3b45, #2e3340); }
+.hour-21 { background: linear-gradient(to bottom, #2e3340, #1f2531); }
+.hour-22 { background: linear-gradient(to bottom, #1f2531, #151a24); }
+.hour-23 { background: linear-gradient(to bottom, #151a24, #0c0f13); }
+.hour-24 { background: linear-gradient(to bottom, #0c0f13, #000000); }
+
+/* Neutral background for empty squares */
+.neutral { background-color: #f8f8f8; }
