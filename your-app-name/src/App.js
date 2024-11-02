@@ -8,14 +8,14 @@ function App() {
     // set the playback rate for each video
     videoRefs.forEach((ref) => {
       if (ref.current) {
-        ref.current.playbackRate = 0.5;
+        ref.current.playbackRate = 0.3;
       }
     });
   }, []);
 
   return (
     <div className="App">
-      {[...Array(24)].map((_, index) => {
+      {[...Array(30)].map((_, index) => {
         if (index === 0) { // top-left diagonal position
           return (
             <div key={index} className="square">
@@ -56,7 +56,15 @@ function App() {
           return (
             <div key={index} className={`square hour-${index + 1}`} />
           );
-        } else {
+        } else if (index === 28) { 
+          return (
+            <div className="text"><p> about </p></div>
+          );
+        } else if (index === 29) {
+          return (
+            <div className="text"><p> the Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848) </p></div>
+          );
+        } else {          
           return <div key={index} className="square neutral" />;
         }
       })}

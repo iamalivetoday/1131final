@@ -1,21 +1,24 @@
 .App {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5 1fr);
   width: 100vw;
   height: 100vh;
-  background-color: black; /* light neutral background */
+  overflow: hidden;
+  background-color: white; /* light neutral background */
 }
 
 .square {
-  position: relative;
-  aspect-ratio: 1; /* Ensures squares are always 1:1 */
   display: flex;
+  height: calc(100vh / 5); /* Adjust based on the number of rows */
+  width: calc(100vw / 6);
   align-items: center;
   justify-content: center;
   outline: 1px solid black; /* Thin black outer border */
   box-sizing: border-box;
 }
+
+
 
 /* Video styles */
 .video {
@@ -51,4 +54,11 @@
 .hour-24 { background: linear-gradient(to bottom, #0c0f13, #000000); }
 
 /* Neutral background for empty squares */
-.neutral { background-color: #f8f8f8; }
+
+.text {
+  padding-left: 6px;
+  padding-right: 6px;
+  outline: 1px solid black; /* Thin black outer border */
+  object-fit: cover;
+
+}
