@@ -52,9 +52,9 @@ function App() {
               </video>
             </div>
           );
-        } else if (index < 24) { // the first 24 squares get hour colors
+        } else if (index < 28) { // the first 24 squares get hour colors
           return (
-            <div key={index} className={`square hour-${index + 1}`} />
+            <div key={index} className={`square hour-${index}`} />
           );
         } else if (index === 28) { 
           return (
