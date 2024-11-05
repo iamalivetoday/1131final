@@ -23,35 +23,40 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Update the color of each square every second
     const updateColors = () => {
-      // Retrieve the current colors of all squares before modifying them
-      const colors = Array.from(document.querySelectorAll('.square')).map((square) => 
-        window.getComputedStyle(square).backgroundColor
-      );
-  
-      // Loop through each square and update its color based on the next/previous squares
       document.querySelectorAll('.square').forEach((square, index) => {
         if ([10, 14, 22].includes(index)) {
-          return; // Skip specified indexes
+          return; // Skip specified indices
         }
   
-        // Calculate the indexes for the next and past squares in the grid
-        const pastIndex = (index - 1 + 28) % 28;
+        // Get the current hour class of the square (e.g., "hour-3")
+        let currentClass = Array.from(square.classList).find(cls => cls.startsWith('hour-'));
   
-        // Apply the color from the previous square to the current one
-        if (![10, 14, 22].includes(index)) {
-          square.style.backgroundColor = colors[pastIndex];
+        // If no hour class is found, initialize with hour-1
+        if (!currentClass) {
+          currentClass = 'hour-1';
+          square.classList.add(currentClass);
         }
+  
+        // Extract the current hour number
+        const currentHour = parseInt(currentClass.replace('hour-', ''), 10);
+  
+        // Calculate the next hour, cycling back to 1 if we reach 27
+        const nextHour = (currentHour % 27) + 1;
+  
+        // Remove the current hour class and add the next hour class
+        square.classList.remove(currentClass);
+        square.classList.add(`hour-${nextHour}`);
       });
     };
   
-    // Set interval to update colors every second
+    // Set interval to update the colors every second
     const intervalId = setInterval(updateColors, 1000);
-    
+  
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
+  
   
   return (
     <div className="App">
