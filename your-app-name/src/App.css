@@ -1,16 +1,27 @@
+/* Container to center the grid at the bottom */
+.container {
+  display: flex;
+  align-items: flex-end; /* Aligns content to the bottom */
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /* Background for free space */
+}
+
+/* App grid */
 .App {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5 1fr);
+  grid-template-rows: repeat(5, 1fr);
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
-  background-color: white; /* light neutral background */
 }
+
 
 .square {
   display: flex;
-  height: calc(100vh / 5); /* Adjust based on the number of rows */
+  height: calc(90vh / 5); /* Adjust based on the number of rows */
   width: calc(100vw / 6);
   align-items: center;
   justify-content: center;
@@ -27,6 +38,7 @@
   transition: opacity 0.3s ease;
   font-size: 1rem;
   position: relative;
+  text-shadow: 0.5px 0.5px 0px white; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
   color: black; /* Adjust this color to your preference */
 }
 
@@ -51,7 +63,7 @@
 .hour-6 { background-image: url('../public/hour6.png') } /* Early evening */
 .hour-7 { background-image: url('../public/hour7.png') } /* Early evening */
 .hour-8 { background-image: url('../public/hour8.png') } /* Early evening */
-.hour-9 { background-image: url('../public/hour9.png') } /* Early evening */
+.hour-9 { background-image: url('../public/hour95.png') } /* Early evening */
 .hour-10 { background-image: url('../public/hour9.png') } /* Early evening */
 .hour-11 { background-image: url('../public/hour10.png') } /* Early evening */
 .hour-12 { background-image: url('../public/hour1049.png') } /* Early evening */
@@ -77,9 +89,9 @@
   padding-left: 12px;
   padding-right: 6px;
   outline: 1px solid black; /* Thin black outer border */
-  object-fit: cover;
   padding-top: 6px;
-
+  box-sizing: border-box;
+  background-size: cover;
 }
 
 a {
@@ -90,4 +102,38 @@ a {
 a:hover {
   font-style: italic;
   
+}
+
+/* Modal background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
 }

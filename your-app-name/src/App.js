@@ -3,6 +3,8 @@ import './App.css';
 
 function App() {
   const [timeSpent, setTimeSpent] = useState(0); // state for tracking time in seconds
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   // Create refs for each unique video
   const videoRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -58,6 +60,7 @@ function App() {
   }, []);
 
   return (
+    <div className="container">
     <div className="App">
       {[...Array(30)].map((_, index) => {
         if (index === 0) { // top-left diagonal position
@@ -103,22 +106,33 @@ function App() {
           );
         } else if (index === 28) { // bottom right square for the "time tracker" and about section
           return (
-            <div key={index} className="text">
+            <div key={index} className="text" onClick={toggleModal} style={{ cursor: 'pointer' }}>
               <br/><br/>
               <div>about</div>
+              <br/><br/>
             </div>
           );
         } else if (index === 29) {
           return (
             <div key={index} className="text">
-              <p>The Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848)</p>
+              <a href="https://digitalarchives.powerlibrary.org/papd/islandora/object/papd%3Aslppadocs_26702?overlay_query=RELS_EXT_isMemberOfCollection_uri_ms%3A%22info%3Afedora/papd%3Aslppadocs%22#page/6/mode/2up">The Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848)</a>
             </div>
           );
         } else {
           return <div key={index} className="square neutral" />;
         }
       })}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={toggleModal}>&times;</span>
+            <p>This is the about section with some detailed information!</p>
+          </div>
+        </div>
+      )}
     </div>
+    </div>
+
   );
 }
 
