@@ -21,7 +21,18 @@
   background-position: center;
 }
 
+/* Hide the time text by default */
+.square .time-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+  color: black; /* Adjust this color to your preference */
+}
 
+.square:hover .time-text {
+  opacity: 1;
+}
 
 /* Video styles */
 .video {
@@ -63,7 +74,7 @@
 /* Neutral background for empty squares */
 
 .text {
-  padding-left: 6px;
+  padding-left: 12px;
   padding-right: 6px;
   outline: 1px solid black; /* Thin black outer border */
   object-fit: cover;

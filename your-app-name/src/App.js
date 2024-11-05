@@ -51,7 +51,7 @@ function App() {
     };
   
     // Set interval to update the colors every second
-    const intervalId = setInterval(updateColors, 1000);
+    const intervalId = setInterval(updateColors, 2000);
   
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
@@ -96,20 +96,16 @@ function App() {
               </video>
             </div>
           );
-        } else if (index >= 1 && index <= 27) { // White squares showing time
-          return (
-            <div key={index} className={`square hour-${index}`}>
-              {timeSpent} seconds
-            </div>
+        } else if (index >= 1 && index <= 27) {
+          return (<div key={index} className={`square hour-${index}`}>
+            <span className="time-text">{timeSpent} seconds</span>
+          </div>
           );
         } else if (index === 28) { // bottom right square for the "time tracker" and about section
           return (
             <div key={index} className="text">
-              <div>about</div>
               <br/><br/>
-              <hr style={{ color: 'gray' }} />
-              <br/>
-              <div>time: {timeSpent} seconds</div>
+              <div>about</div>
             </div>
           );
         } else if (index === 29) {
