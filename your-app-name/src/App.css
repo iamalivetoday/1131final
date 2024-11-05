@@ -1,11 +1,38 @@
-/* Container to center the grid at the bottom */
 .container {
   display: flex;
-  align-items: flex-end; /* Aligns content to the bottom */
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Allows space for the header at the top */
   width: 100vw;
   height: 100vh;
-  background-color: white; /* Background for free space */
+  background-color: black;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  color:white;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  padding: 1rem 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Left-aligned title text */
+.left-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Right-aligned text for author, course, and time */
+.right-text {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.right-text > div {
+  margin-bottom: 0.3rem;
 }
 
 /* App grid */
@@ -90,8 +117,10 @@
   padding-right: 6px;
   outline: 1px solid black; /* Thin black outer border */
   padding-top: 6px;
+  background-color: white;
   box-sizing: border-box;
   background-size: cover;
+  font-size: 0.7rem;
 }
 
 a {

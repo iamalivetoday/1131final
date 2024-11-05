@@ -61,76 +61,83 @@ function App() {
 
   return (
     <div className="container">
-    <div className="App">
-      {[...Array(30)].map((_, index) => {
-        if (index === 0) { // top-left diagonal position
-          return (
-            <div key={index} className="square">
-              <video ref={videoRefs[0]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/video1.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          );
-        } else if (index === 14) { // center diagonal position
-          return (
-            <div key={index} className="square">
-              <video ref={videoRefs[1]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/video2.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          );
-        } else if (index === 10) { // bottom-right diagonal position
-          return (
-            <div key={index} className="square">
-              <video ref={videoRefs[2]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/video3.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          );
-        } else if (index === 22) { // another diagonal position
-          return (
-            <div key={index} className="square">
-              <video ref={videoRefs[3]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/exerciseroom.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          );
-        } else if (index >= 1 && index <= 27) {
-          return (<div key={index} className={`square hour-${index}`}>
-            <span className="time-text">{timeSpent} seconds</span>
-          </div>
-          );
-        } else if (index === 28) { // bottom right square for the "time tracker" and about section
-          return (
-            <div key={index} className="text" onClick={toggleModal} style={{ cursor: 'pointer' }}>
-              <br/><br/>
-              <div>about</div>
-              <br/><br/>
-            </div>
-          );
-        } else if (index === 29) {
-          return (
-            <div key={index} className="text">
-              <a href="https://digitalarchives.powerlibrary.org/papd/islandora/object/papd%3Aslppadocs_26702?overlay_query=RELS_EXT_isMemberOfCollection_uri_ms%3A%22info%3Afedora/papd%3Aslppadocs%22#page/6/mode/2up">The Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848)</a>
-            </div>
-          );
-        } else {
-          return <div key={index} className="square neutral" />;
-        }
-      })}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={toggleModal}>&times;</span>
-            <p>This is the about section with some detailed information!</p>
-          </div>
+      <header className="header">
+        <div className="left-text">An Alternate Perspective of the Eastern State Penitentiary, 1848</div>
+        <div className="right-text">
+          <div>source code</div>
+          <div>ENGL 1131: Crime and Criminality</div>
         </div>
-      )}
-    </div>
+        </header>
+      <div className="App">
+        {[...Array(30)].map((_, index) => {
+          if (index === 0) { // top-left diagonal position
+            return (
+              <div key={index} className="square">
+                <video ref={videoRefs[0]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/video1.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            );
+          } else if (index === 14) { // center diagonal position
+            return (
+              <div key={index} className="square">
+                <video ref={videoRefs[1]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/video2.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            );
+          } else if (index === 10) { // bottom-right diagonal position
+            return (
+              <div key={index} className="square">
+                <video ref={videoRefs[2]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/video3.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            );
+          } else if (index === 22) { // another diagonal position
+            return (
+              <div key={index} className="square">
+                <video ref={videoRefs[3]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/exerciseroom.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            );
+          } else if (index >= 1 && index <= 27) {
+            return (<div key={index} className={`square hour-${index}`}>
+              <span className="time-text">{timeSpent} seconds</span>
+            </div>
+            );
+          } else if (index === 28) { // bottom right square for the "time tracker" and about section
+            return (
+              <div key={index} className="text" onClick={toggleModal} style={{ cursor: 'pointer' }}>
+                <br/><br/>
+                <div>about</div>
+                <br/><br/>
+              </div>
+            );
+          } else if (index === 29) {
+            return (
+              <div key={index} className="text">
+                <a href="https://digitalarchives.powerlibrary.org/papd/islandora/object/papd%3Aslppadocs_26702?overlay_query=RELS_EXT_isMemberOfCollection_uri_ms%3A%22info%3Afedora/papd%3Aslppadocs%22#page/6/mode/2up">The Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848)</a>
+              </div>
+            );
+          } else {
+            return <div key={index} className="square neutral" />;
+          }
+        })}
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={toggleModal}>&times;</span>
+              <p>This is the about section with some detailed information!</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
 
   );
