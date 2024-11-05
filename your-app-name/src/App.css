@@ -29,29 +29,29 @@
 
 /* Gradient color classes for 24 hours */
 /* Gradient color classes for 24 hours */
-.hour-1 { background: linear-gradient(to bottom, #0b0c22, #1a1d3d); } /* Deep night */
-.hour-2 { background: linear-gradient(to bottom, #56565a, #252b5b); } /* Late night */
-.hour-3 { background: linear-gradient(to bottom, #252b5b, #2d3677); }
-.hour-4 { background: linear-gradient(to bottom, #2d3677, #36458d); }
-.hour-5 { background: linear-gradient(to bottom, #36458d, #4256a3); } /* Pre-dawn */
+.hour-1 { background: linear-gradient(to bottom, #0b0c22, #1a1d3d); } /* Deep night  */ 
+.hour-4 { background: linear-gradient(to bottom, #252b5b, #36458d); } /* Late night */
+.hour-2 { background: linear-gradient(to bottom, #252b5b, #2d3677); }
+.hour-3 { background: linear-gradient(to bottom, #2d3677, #36458d); }
+.hour-5 { background: linear-gradient(to bottom, #4256a3, #56565a); } /* Pre-dawn */
 .hour-6 { background: linear-gradient(to bottom, #4256a3, #5a76c4); } /* Early dawn */
 .hour-7 { background: linear-gradient(to bottom, #5a76c4, #8ba9e5); } /* Morning light */
 .hour-8 { background: linear-gradient(to bottom, #8ba9e5, #b8d2f0); } /* Full morning */
 .hour-9 { background: linear-gradient(to bottom, #b8d2f0, #d9ecf9); } /* Mid-morning */
-.hour-1 { background: linear-gradient(to bottom, #d9ecf9, #ffffff); } /* Midday */
-.hour-12 { background: linear-gradient(to bottom, #ffffff, #f7f5ef); } /* Bright noon */
-.hour-13 { background: linear-gradient(to bottom, #f7f5ef, #f4ede4); }
-.hour-15 { background: linear-gradient(to bottom, #f4ede4, #f1e5da); }
-.hour-16 { background: linear-gradient(to bottom, #f1e5da, #eed5c8); } /* Afternoon */
-.hour-17 { background: linear-gradient(to bottom, #eed5c8, #e8c0ae); }
-.hour-18 { background: linear-gradient(to bottom, #e8c0ae, #d5a688); } /* Golden hour begins */
-.hour-19 { background: linear-gradient(to bottom, #d5a688, #b97f5e); } /* Golden hour peak */
-.hour-20 { background: linear-gradient(to bottom, #b97f5e, #9b6146); } /* Sunset */
-.hour-21 { background: linear-gradient(to bottom, #9b6146, #734538); } /* Dusk */
-.hour-22 { background: linear-gradient(to bottom, #734538, #53323a); } /* Early evening */
-.hour-24 { background: linear-gradient(to bottom, #53323a, #3d2832); }
-.hour-23 { background: linear-gradient(to bottom, #734538, #53323a); } /* Early evening */
-.hour-25 { background: linear-gradient(to bottom, #3d2832, #29222a); } /* Nightfall */
+.hour-11 { background: linear-gradient(to bottom, #e6f7ff, #ffffff); } /* Midday with a hint of brightness */
+.hour-12 { background: linear-gradient(to bottom, #ffffff, #fff8e6); } /* Bright noon with a subtle warm light */
+.hour-13 { background: linear-gradient(to bottom, #fff8e6, #fef3d9); } /* Early afternoon with a warmer touch */
+.hour-15 { background: linear-gradient(to bottom, #fef3d9, #fdeacb); } /* Afternoon with more golden light */
+.hour-16 { background: linear-gradient(to bottom, #fdeacb, #fcd5a6); } /* Late afternoon with increased warmth */
+.hour-17 { background: linear-gradient(to bottom, #fcd5a6, #ffea70); } /* Approaching golden hour with added yellow */
+.hour-18 { background: linear-gradient(to bottom, #ffe802, #ffce00); } /* Golden hour begins */
+.hour-19 { background: linear-gradient(to bottom, #fdbf00, #ffb400); } /* Golden hour peak */
+.hour-20 { background: linear-gradient(to bottom, #fbb03b, #ed1c24); } /* Sunset */
+.hour-21 { background: linear-gradient(to bottom, #920420, #bb6800); } /* Dusk */
+.hour-22 { background: linear-gradient(to bottom, #ae360d, #FFB472, #A3D1FF); } /* Early evening */
+.hour-25 { background: linear-gradient(to bottom, #53323a, #53323a); }
+.hour-23 { background: linear-gradient(to bottom, #5DA3FA, #357ABD); } /* Early evening */
+.hour-24 { background: linear-gradient(to bottom, #2C6EA8, #1F5E99, #144D87, #0E3D73); } /* Nightfall */
 .hour-26 { background: linear-gradient(to bottom, #29222a, #17171c); } /* Late night */
 .hour-27 { background: linear-gradient(to bottom, #17171c, #0c0d10); } /* Deep night */
 
@@ -62,5 +62,16 @@
   padding-right: 6px;
   outline: 1px solid black; /* Thin black outer border */
   object-fit: cover;
+  padding-top: 6px;
 
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  font-style: italic;
+  
 }
