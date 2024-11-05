@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Allows space for the header at the top */
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  color:white;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  padding: 1rem 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Left-aligned title text */
+.left-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Right-aligned text for author, course, and time */
+.right-text {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.right-text > div {
+  margin-bottom: 0.3rem;
+}
+
+/* App grid */
+.App {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+}
+
+
+.square {
+  display: flex;
+  height: calc(90vh / 5); /* Adjust based on the number of rows */
+  width: calc(100vw / 6);
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid black; /* Thin black outer border */
+  box-sizing: border-box;
+  background-size: cover;
+  transition: background-color 1s ease, color 1s ease; /* Smooth transitions for background and text color */
+  background-position: center;
+}
+
+/* Hide the time text by default */
+.square .time-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+  text-shadow: 0.5px 0.5px 0px white; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+  color: black; /* Adjust this color to your preference */
+}
+
+.square:hover .time-text {
+  opacity: 1;
+}
+
+/* Video styles */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient color classes for 24 hours */
+/* Gradient color classes for 24 hours */
+.hour-27 { background-image: url('../public/hour2.png') } /* Early evening */
+.hour-2 { background-image: url('../public/hour2half.png') } /* Early evening */
+.hour-3 { background-image: url('../public/hour3.png') } /* Early evening */
+.hour-4 { background-image: url('../public/hour4.png') } /* Early evening */
+.hour-5 { background-image: url('../public/hour5.png') } /* Early evening */
+.hour-6 { background-image: url('../public/hour6.png') } /* Early evening */
+.hour-7 { background-image: url('../public/hour7.png') } /* Early evening */
+.hour-8 { background-image: url('../public/hour8.png') } /* Early evening */
+.hour-9 { background-image: url('../public/hour95.png') } /* Early evening */
+.hour-10 { background-image: url('../public/hour9.png') } /* Early evening */
+.hour-11 { background-image: url('../public/hour10.png') } /* Early evening */
+.hour-12 { background-image: url('../public/hour1049.png') } /* Early evening */
+.hour-13 { background-image: url('../public/hour105.png') } /* Early evening */
+.hour-14 { background-image: url('../public/hour11.png') } /* Early evening */
+.hour-15 { background-image: url('../public/hour12.png') } /* Early evening */
+.hour-16 { background-image: url('../public/hour13.png') } /* Early evening */
+.hour-17 { background-image: url('../public/hour15.png') } /* Early evening */
+.hour-18 { background-image: url('../public/hour18.png') } /* Golden hour begins */
+.hour-19 { background-image: url('../public/hour19.png') } /* Golden hour peak */
+.hour-20 { background-image: url('../public/hour20.png') } /* Early evening */
+.hour-21 { background-image: url('../public/hour21.png') } /* Early evening */
+.hour-22 { background-image: url('../public/hour22.png') } /* Early evening */
+.hour-25 { background-image: url('../public/hour25.png') } /* Early evening */
+.hour-23 { background-image: url('../public/hour23.png') } /* Early evening */
+.hour-24 { background-image: url('../public/hour24.png') } /* Early evening */
+.hour-26 { background-image: url('../public/hour26.png') } /* Early evening */
+.hour-1 { background-image: url('../public/hour27.png') } /* Early evening */
+
+/* Neutral background for empty squares */
+
+.text {
+  padding-left: 12px;
+  padding-right: 6px;
+  outline: 1px solid black; /* Thin black outer border */
+  padding-top: 6px;
+  background-color: white;
+  box-sizing: border-box;
+  background-size: cover;
+  font-size: 0.7rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  font-style: italic;
+  
+}
+
+/* Modal background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
