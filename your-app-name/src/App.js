@@ -45,9 +45,8 @@ function App() {
     
           // Remove the current hour class and add the next hour class
           square.classList.remove(currentClass);
-          square.classList.add(`hour-${nextHour}`);        }
-    
-
+          square.classList.add(`hour-${nextHour}`);
+        }
       });
     };
   
@@ -97,9 +96,11 @@ function App() {
               </video>
             </div>
           );
-        } else if (index < 28) { // the first 24 squares get hour colors
+        } else if (index >= 1 && index <= 27) { // White squares showing time
           return (
-            <div key={index} className={`square hour-${index}`} />
+            <div key={index} className={`square hour-${index}`}>
+              {timeSpent} seconds
+            </div>
           );
         } else if (index === 28) { // bottom right square for the "time tracker" and about section
           return (

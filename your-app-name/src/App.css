@@ -17,6 +17,7 @@
   outline: 1px solid black; /* Thin black outer border */
   box-sizing: border-box;
   background-size: cover;
+  transition: background-color 1s ease, color 1s ease; /* Smooth transitions for background and text color */
   background-position: center;
 }
 
@@ -31,8 +32,8 @@
 
 /* Gradient color classes for 24 hours */
 /* Gradient color classes for 24 hours */
-.hour-27 { background: linear-gradient(to bottom, #0b0c22, #1a1d3d); } /* Deep night  */ 
-.hour-2 { background: linear-gradient(to bottom, #252b5b, #2d3677); }
+.hour-27 { background-image: url('../public/hour2.png') } /* Early evening */
+.hour-2 { background-image: url('../public/hour2half.png') } /* Early evening */
 .hour-3 { background-image: url('../public/hour3.png') } /* Early evening */
 .hour-4 { background-image: url('../public/hour4.png') } /* Early evening */
 .hour-5 { background-image: url('../public/hour5.png') } /* Early evening */
@@ -40,15 +41,17 @@
 .hour-7 { background-image: url('../public/hour7.png') } /* Early evening */
 .hour-8 { background-image: url('../public/hour8.png') } /* Early evening */
 .hour-9 { background-image: url('../public/hour9.png') } /* Early evening */
+.hour-10 { background-image: url('../public/hour9.png') } /* Early evening */
 .hour-11 { background-image: url('../public/hour10.png') } /* Early evening */
-.hour-12 { background-image: url('../public/hour11.png') } /* Early evening */
-.hour-13 { background-image: url('../public/hour12.png') } /* Early evening */
-.hour-15 { background-image: url('../public/hour13.png') } /* Early evening */
-.hour-16 { background-image: url('../public/hour15.png') } /* Early evening */
-.hour-17 { background: linear-gradient(to bottom, #fcd5a6, #ffea70); } /* Approaching golden hour with added yellow */
-.hour-18 { background: linear-gradient(to bottom, #ffe802, #ffce00); } /* Golden hour begins */
-.hour-19 { background: linear-gradient(to bottom, #fdbf00, #ffb400); } /* Golden hour peak */
-.hour-20 { background: linear-gradient(to bottom, #fbb03b, #ed1c24); } /* Sunset */
+.hour-12 { background-image: url('../public/hour1049.png') } /* Early evening */
+.hour-13 { background-image: url('../public/hour105.png') } /* Early evening */
+.hour-14 { background-image: url('../public/hour11.png') } /* Early evening */
+.hour-15 { background-image: url('../public/hour12.png') } /* Early evening */
+.hour-16 { background-image: url('../public/hour13.png') } /* Early evening */
+.hour-17 { background-image: url('../public/hour15.png') } /* Early evening */
+.hour-18 { background-image: url('../public/hour18.png') } /* Golden hour begins */
+.hour-19 { background-image: url('../public/hour19.png') } /* Golden hour peak */
+.hour-20 { background-image: url('../public/hour20.png') } /* Early evening */
 .hour-21 { background-image: url('../public/hour21.png') } /* Early evening */
 .hour-22 { background-image: url('../public/hour22.png') } /* Early evening */
 .hour-25 { background-image: url('../public/hour25.png') } /* Early evening */
