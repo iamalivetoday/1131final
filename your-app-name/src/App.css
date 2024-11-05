@@ -16,6 +16,8 @@
   justify-content: center;
   outline: 1px solid black; /* Thin black outer border */
   box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -29,31 +31,31 @@
 
 /* Gradient color classes for 24 hours */
 /* Gradient color classes for 24 hours */
-.hour-1 { background: linear-gradient(to bottom, #0b0c22, #1a1d3d); } /* Deep night  */ 
-.hour-4 { background: linear-gradient(to bottom, #252b5b, #36458d); } /* Late night */
+.hour-27 { background: linear-gradient(to bottom, #0b0c22, #1a1d3d); } /* Deep night  */ 
 .hour-2 { background: linear-gradient(to bottom, #252b5b, #2d3677); }
-.hour-3 { background: linear-gradient(to bottom, #2d3677, #36458d); }
-.hour-5 { background: linear-gradient(to bottom, #4256a3, #56565a); } /* Pre-dawn */
-.hour-6 { background: linear-gradient(to bottom, #4256a3, #5a76c4); } /* Early dawn */
-.hour-7 { background: linear-gradient(to bottom, #5a76c4, #8ba9e5); } /* Morning light */
-.hour-8 { background: linear-gradient(to bottom, #8ba9e5, #b8d2f0); } /* Full morning */
-.hour-9 { background: linear-gradient(to bottom, #b8d2f0, #d9ecf9); } /* Mid-morning */
-.hour-11 { background: linear-gradient(to bottom, #e6f7ff, #ffffff); } /* Midday with a hint of brightness */
-.hour-12 { background: linear-gradient(to bottom, #ffffff, #fff8e6); } /* Bright noon with a subtle warm light */
-.hour-13 { background: linear-gradient(to bottom, #fff8e6, #fef3d9); } /* Early afternoon with a warmer touch */
-.hour-15 { background: linear-gradient(to bottom, #fef3d9, #fdeacb); } /* Afternoon with more golden light */
-.hour-16 { background: linear-gradient(to bottom, #fdeacb, #fcd5a6); } /* Late afternoon with increased warmth */
+.hour-3 { background-image: url('../public/hour3.png') } /* Early evening */
+.hour-4 { background-image: url('../public/hour4.png') } /* Early evening */
+.hour-5 { background-image: url('../public/hour5.png') } /* Early evening */
+.hour-6 { background-image: url('../public/hour6.png') } /* Early evening */
+.hour-7 { background-image: url('../public/hour7.png') } /* Early evening */
+.hour-8 { background-image: url('../public/hour8.png') } /* Early evening */
+.hour-9 { background-image: url('../public/hour9.png') } /* Early evening */
+.hour-11 { background-image: url('../public/hour10.png') } /* Early evening */
+.hour-12 { background-image: url('../public/hour11.png') } /* Early evening */
+.hour-13 { background-image: url('../public/hour12.png') } /* Early evening */
+.hour-15 { background-image: url('../public/hour13.png') } /* Early evening */
+.hour-16 { background-image: url('../public/hour15.png') } /* Early evening */
 .hour-17 { background: linear-gradient(to bottom, #fcd5a6, #ffea70); } /* Approaching golden hour with added yellow */
 .hour-18 { background: linear-gradient(to bottom, #ffe802, #ffce00); } /* Golden hour begins */
 .hour-19 { background: linear-gradient(to bottom, #fdbf00, #ffb400); } /* Golden hour peak */
 .hour-20 { background: linear-gradient(to bottom, #fbb03b, #ed1c24); } /* Sunset */
-.hour-21 { background: linear-gradient(to bottom, #920420, #bb6800); } /* Dusk */
-.hour-22 { background: linear-gradient(to bottom, #ae360d, #FFB472, #A3D1FF); } /* Early evening */
-.hour-25 { background: linear-gradient(to bottom, #53323a, #53323a); }
-.hour-23 { background: linear-gradient(to bottom, #5DA3FA, #357ABD); } /* Early evening */
-.hour-24 { background: linear-gradient(to bottom, #2C6EA8, #1F5E99, #144D87, #0E3D73); } /* Nightfall */
-.hour-26 { background: linear-gradient(to bottom, #29222a, #17171c); } /* Late night */
-.hour-27 { background: linear-gradient(to bottom, #17171c, #0c0d10); } /* Deep night */
+.hour-21 { background-image: url('../public/hour21.png') } /* Early evening */
+.hour-22 { background-image: url('../public/hour22.png') } /* Early evening */
+.hour-25 { background-image: url('../public/hour25.png') } /* Early evening */
+.hour-23 { background-image: url('../public/hour23.png') } /* Early evening */
+.hour-24 { background-image: url('../public/hour24.png') } /* Early evening */
+.hour-26 { background-image: url('../public/hour26.png') } /* Early evening */
+.hour-1 { background-image: url('../public/hour27.png') } /* Early evening */
 
 /* Neutral background for empty squares */
 
@@ -74,4 +76,14 @@ a {
 a:hover {
   font-style: italic;
   
+}
+
+.square video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

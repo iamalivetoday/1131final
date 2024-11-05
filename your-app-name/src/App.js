@@ -30,13 +30,7 @@ function App() {
         }
   
         // Get the current hour class of the square (e.g., "hour-3")
-        let currentClass = Array.from(square.classList).find(cls => cls.startsWith('hour-'));
-  
-        // If no hour class is found, initialize with hour-1
-        if (!currentClass) {
-          currentClass = 'hour-1';
-          square.classList.add(currentClass);
-        }
+        const currentClass = Array.from(square.classList).find(cls => cls.startsWith('hour-'));
   
         // Extract the current hour number
         const currentHour = parseInt(currentClass.replace('hour-', ''), 10);
@@ -56,7 +50,6 @@ function App() {
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
-  
   
   return (
     <div className="App">
@@ -92,7 +85,7 @@ function App() {
           return (
             <div key={index} className="square">
               <video ref={videoRefs[2]} className="video" autoPlay loop muted>
-                <source src={`${process.env.PUBLIC_URL}/exerciseroom.mp4`} type="video/mp4" />
+                <source src={`${process.env.PUBLIC_URL}/video4.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
