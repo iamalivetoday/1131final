@@ -7,13 +7,14 @@ function App() {
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   // Create refs for each unique video
-  const videoRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const videoRefs = [useRef(null), useRef(null), useRef(null)];
 
   const formatElapsedTime = (milliseconds) => {
     let remainingMs = milliseconds;
 
     const ms = remainingMs % 1000;
-    remainingMs = Math.floor(remainingMs / 1000);    const s = remainingMs % 60;
+    remainingMs = Math.floor(remainingMs / 1000);    
+    const s = remainingMs % 60;
     remainingMs = Math.floor(remainingMs / 60);
     const min = remainingMs % 60;
     remainingMs = Math.floor(remainingMs / 60);
@@ -95,24 +96,27 @@ function App() {
             return (
               <div key={index} className="square">
                 <video ref={videoRefs[0]} className="video" autoPlay loop muted>
-                  <source src={`${process.env.PUBLIC_URL}/video1.mp4`} type="video/mp4" />
+                  <source src={`https://drive.google.com/file/d/1DvN5QcPbtlYIi2xcgt_OwPFRsYbWsFXv/view?usp=sharing`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
             );
-          } else if (index === 14) { // center diagonal position
+          } else if (index === 14) { // center diagonal position with YouTube embed
             return (
               <div key={index} className="square">
-                <video ref={videoRefs[1]} className="video" autoPlay loop muted>
-                  <source src={`${process.env.PUBLIC_URL}/video2.mp4`} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <div className="video">
+                  <iframe
+                    src="https://www.youtube.com/embed/iocUHPRZ8Ow?autoplay=1&mute=1&loop=1&controls=0&rel=0&modestbranding=1"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  ></iframe>
+                </div>
               </div>
             );
           } else if (index === 10) { // bottom-right diagonal position
             return (
               <div key={index} className="square">
-                <video ref={videoRefs[2]} className="video" autoPlay loop muted>
+                <video ref={videoRefs[1]} className="video" autoPlay loop muted>
                   <source src={`${process.env.PUBLIC_URL}/video3.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -121,7 +125,7 @@ function App() {
           } else if (index === 22) { // another diagonal position
             return (
               <div key={index} className="square">
-                <video ref={videoRefs[3]} className="video" autoPlay loop muted>
+                <video ref={videoRefs[2]} className="video" autoPlay loop muted>
                   <source src={`${process.env.PUBLIC_URL}/exerciseroom.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -162,7 +166,6 @@ function App() {
         )}
       </div>
     </div>
-
   );
 }
 
