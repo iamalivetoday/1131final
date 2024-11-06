@@ -9,11 +9,31 @@ function App() {
   // Create refs for each unique video
   const videoRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
+  const formatElapsedTime = (milliseconds) => {
+    let remainingMs = milliseconds;
+
+    const ms = remainingMs % 1000;
+    remainingMs = Math.floor(remainingMs / 1000);    const s = remainingMs % 60;
+    remainingMs = Math.floor(remainingMs / 60);
+    const min = remainingMs % 60;
+    remainingMs = Math.floor(remainingMs / 60);
+    const hr = remainingMs % 24;
+    remainingMs = Math.floor(remainingMs / 24);
+    const days = remainingMs % 30;
+    remainingMs = Math.floor(remainingMs / 30);
+    const months = remainingMs % 12;
+    const years = Math.floor(remainingMs / 12);
+
+    return { s, min, hr, days, months, years };
+  };
+
+  const {ms, s, min, hr, days, months, years } = formatElapsedTime(timeSpent);
+
   useEffect(() => {
     // Start the timer when the component mounts
     const timer = setInterval(() => {
-      setTimeSpent((prevTime) => prevTime + 1);
-    }, 1000);
+      setTimeSpent((prevTime) => prevTime + 100);
+    }, 100);
 
     // Set the playback rate for each video
     videoRefs.forEach((ref) => {
@@ -64,8 +84,9 @@ function App() {
       <header className="header">
         <div className="left-text">An Alternate Perspective of the Eastern State Penitentiary, 1848</div>
         <div className="right-text">
-          <div>source code</div>
-          <div>ENGL 1131: Crime and Criminality</div>
+          <div>
+            {years} years, {months} months, {days} days <br/> {hr} hr, {min} min <br/> {s} seconds
+          </div>
         </div>
         </header>
       <div className="App">
@@ -108,7 +129,7 @@ function App() {
             );
           } else if (index >= 1 && index <= 27) {
             return (<div key={index} className={`square hour-${index}`}>
-              <span className="time-text">{timeSpent} seconds</span>
+              <span className="time-text">{Math.floor(timeSpent/1000)} seconds</span>
             </div>
             );
           } else if (index === 28) { // bottom right square for the "time tracker" and about section
@@ -133,7 +154,8 @@ function App() {
           <div className="modal">
             <div className="modal-content">
               <span className="close" onClick={toggleModal}>&times;</span>
-              <p>This website was made by Madeleine Song for ENGL 1131: Crime and Criminality. The source code is <a>here</a>.</p>
+              <p>This website was made by Madeleine Song for ENGL 1131: Crime and Criminality. 
+                <br/>The source code is <a>here</a>.</p>
               <br/>
             </div>
           </div>
