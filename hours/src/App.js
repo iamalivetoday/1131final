@@ -39,7 +39,7 @@ function App() {
     // Set the playback rate for each video
     videoRefs.forEach((ref) => {
       if (ref.current) {
-        ref.current.playbackRate = 0.3;
+        ref.current.playbackRate = 0.4;
       }
     });
 
@@ -95,8 +95,8 @@ function App() {
           if (index === 0) { // top-left diagonal position
             return (
               <div key={index} className="square">
-                <video ref={videoRefs[0]} className="video" autoPlay loop muted>
-                  <source src={`https://drive.google.com/file/d/1DvN5QcPbtlYIi2xcgt_OwPFRsYbWsFXv/view?usp=sharing`} type="video/mp4" />
+                <video ref={videoRefs[2]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/room3clip1.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -104,20 +104,17 @@ function App() {
           } else if (index === 14) { // center diagonal position with YouTube embed
             return (
               <div key={index} className="square">
-                <div className="video">
-                  <iframe
-                    src="https://www.youtube.com/embed/iocUHPRZ8Ow?autoplay=1&mute=1&loop=1&controls=0&rel=0&modestbranding=1"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                </div>
+                <video ref={videoRefs[2]} className="video" autoPlay loop muted>
+                  <source src={`${process.env.PUBLIC_URL}/room1clip2.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             );
           } else if (index === 10) { // bottom-right diagonal position
             return (
               <div key={index} className="square">
                 <video ref={videoRefs[1]} className="video" autoPlay loop muted>
-                  <source src={`${process.env.PUBLIC_URL}/video3.mp4`} type="video/mp4" />
+                  <source src={`${process.env.PUBLIC_URL}/room2clip1.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -126,7 +123,7 @@ function App() {
             return (
               <div key={index} className="square">
                 <video ref={videoRefs[2]} className="video" autoPlay loop muted>
-                  <source src={`${process.env.PUBLIC_URL}/exerciseroom.mp4`} type="video/mp4" />
+                  <source src={`${process.env.PUBLIC_URL}/room2clip2.mp4`} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
