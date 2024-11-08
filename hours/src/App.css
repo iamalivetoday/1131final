@@ -81,7 +81,7 @@
 
 /* Gradient color classes for 24 hours */
 /* Gradient color classes for 24 hours */
-.hour-27 { background-image: url('../public/hour2.png') } /* Early evening */
+.hour-1 { background-image: url('../public/hour27.png') } /* Early evening */
 .hour-2 { background-image: url('../public/hour2half.png') } /* Early evening */
 .hour-3 { background-image: url('../public/hour3.png') } /* Early evening */
 .hour-4 { background-image: url('../public/hour4.png') } /* Early evening */
@@ -107,7 +107,8 @@
 .hour-23 { background-image: url('../public/hour23.png') } /* Early evening */
 .hour-24 { background-image: url('../public/hour24.png') } /* Early evening */
 .hour-26 { background-image: url('../public/hour26.png') } /* Early evening */
-.hour-1 { background-image: url('../public/hour27.png') } /* Early evening */
+.hour-27 { background-image: url('../public/hour2.png') } /* Early evening */
+
 
 /* Neutral background for empty squares */
 
