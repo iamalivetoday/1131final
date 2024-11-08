@@ -73,11 +73,14 @@ function App() {
   ];
   
   const [hoverQuote, setHoverQuote] = useState("");
+  const [lastHoveredSquare, setLastHoveredSquare] = useState(null);
 
-  const handleMouseEnter = () => {
-    // Set a random quote from the array
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    setHoverQuote(randomQuote);
+  const handleMouseEnter = (index) => {
+    if (lastHoveredSquare !== index) {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      setHoverQuote(randomQuote);
+      setLastHoveredSquare(index); // Update last hovered square
+    }
   };
 
   const handleMouseLeave = () => {
@@ -190,12 +193,39 @@ function App() {
                 className={`square hour-${index}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                style={{
+                  backgroundColor: "black",
+                }}
               >
-                <span className="time-text">
+                <span
+                  className="time-text"
+                  style={{
+                    fontSize: hoverQuote.length > 400
+                      ? "0.35rem"
+                      : hoverQuote.length > 300
+                      ? "0.4rem"
+                      : hoverQuote.length > 200 
+                      ? "0.5rem"
+                      : hoverQuote.length > 125 
+                      ? "0.6rem" 
+                      : hoverQuote.length > 75
+                      ? "0.75rem"
+                      : "0.85rem", // Adjust font size
+                    display: "block", // Ensure proper block formatting
+                    textAlign: "left", // Center the text within the square
+                    wordWrap: "break-word", // Handle long words
+                    whiteSpace: "normal", // Allow text wrapping
+                    color: "white", // Set text color to white
+                    fontFamily: "serif", // Use serif font
+                    padding: "10px", // Add padding for better readability
+                    lineHeight: "1.4",
+                    transition: "opacity 5s", // Fade out over 5 seconds
+                  }}              
+                >
                   {hoverQuote}
                 </span>
               </div>
-            );
+            );            
           } else if (index === 28) { // bottom right square for the "time tracker" and about section
             return (
               <div key={index} className="text" onClick={toggleModal} style={{ cursor: 'pointer' }}>
@@ -218,8 +248,9 @@ function App() {
           <div className="modal">
             <div className="modal-content">
               <span className="close" onClick={toggleModal}>&times;</span>
-              <p>This website was made by Madeleine Song for ENGL 1131: Crime and Criminality. 
-                <br/>The source code is <a>here</a>.</p>
+              <p>This website was made by Madeleine Song for ENGL 1131: Crime and Criminality, and should ideally be viewed on a computer at 100% zoom.
+                <br/><br/>The source code is <a>here</a>.</p>
+                <br/><br/>The assignment was to find a document from the 17th, 18th, or 19th century written by or about someone who lived in the Atlantic world, and then compose an historically-informed, fictional account of the events it describes with a different perspective from the one the document offers. I chose the Annual report of the inspectors of the Eastern State Penitentiary of Pennsylvania (1848), and the alternate account I am offering is that of an anonymous prisoner.
               <br/>
             </div>
           </div>

@@ -64,8 +64,6 @@
   transition: opacity 0.3s ease;
   font-size: 1rem;
   position: relative;
-  text-shadow: 0.5px 0.5px 0px white; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
-  color: black; /* Adjust this color to your preference */
 }
 
 .square:hover .time-text {
@@ -88,8 +86,8 @@
 .hour-5 { background-image: url('../public/hour5.png') } /* Early evening */
 .hour-6 { background-image: url('../public/hour6.png') } /* Early evening */
 .hour-7 { background-image: url('../public/hour7.png') } /* Early evening */
-.hour-8 { background-image: url('../public/hour8.png') } /* Early evening */
-.hour-9 { background-image: url('../public/hour95.png') } /* Early evening */
+.hour-8 { background-image: url('../public/hour95.png') } /* Early evening */
+.hour-9 { background-image: url('../public/hour8.png') } /* Early evening */
 .hour-10 { background-image: url('../public/hour9.png') } /* Early evening */
 .hour-11 { background-image: url('../public/hour10.png') } /* Early evening */
 .hour-12 { background-image: url('../public/hour1049.png') } /* Early evening */
